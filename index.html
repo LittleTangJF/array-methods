@@ -45,7 +45,8 @@
       flex-flow: row wrap;
       margin-top: 25px;
       background-color: #fff;
-      border-radius: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
       padding:0 32px;
       padding-top: 15px;
       box-sizing: border-box;
@@ -67,15 +68,57 @@
       color: #333;
       font-size: 16px;
     }
+    .tabContent{
+      background-color: #fff;
+      padding: 25px;
+    }
+    .tabContent ul {
+      list-style: none;
+    }
+    .tabContent ul li{
+      margin-bottom: 15px;
+    }
+    .tabContent ul li>.txt>span{
+      color: salmon
+    }
+    .tabContent ul li>.img{
+      padding: 15px 0 0 35px;
+      
+    }
+    .back{
+      position: fixed;
+      right: 20px;
+      bottom: 50px;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      background-color:salmon ;
+      border-radius: 50px;
+      text-align: center;
+    }
+    .back a,.back a:active,.back a:visited{
+      text-decoration: none;
+      color: #fff;
+    }
+    .jump {
+      margin-bottom: 30px;
+      background-color: #fff;
+      padding-bottom: 35px;
+      padding-left: 25px;
+    }
+    .jump a {
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <div class="title">
+    <div class="title" id="top">
       <h3>JS数组方法及遍历耗时</h3>
     </div>
-    <div class="left">
+    <div class="back"> <a href="#top">回到顶部</a></div>
+    <div class="tabList">
       <ul class="list">
         <li><a href="#1">push</a></li>
         <li><a href="#2">unshift</a>  </li>
@@ -111,17 +154,139 @@
         <li><a href="#32">[@@iterator]</a></li>
       </ul>
     </div>
-    <div class="right"></div>
+    <div class="tabContent">
+      <ul>
+        <li id="1">
+          <div class="txt">01、<span>push(value)</span>将value添加到数组的最后，返回数组长度<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/push.png" alt=""></div>
+        </li>
+        <li id="2">
+          <div class="txt">02、<span>unshift()</span>添加元素到数组的开头，返回数组的长度<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/unshift.png" alt=""></div>
+        </li>
+        <li id="3">
+          <div class="txt">03、<span>pop()</span>删除数组中最后一个元素，返回被删除元素<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/pop.png" alt=""></div>
+        </li>
+        <li id="4">
+          <div class="txt">04、<span>shift()</span>删除数组中第一个元素，返回删除的元素<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/shift.png" alt=""></div>
+        </li>
+        <li id="5">
+          <div class="txt">05、<span>join(value)</span>将数组用value连接为字符串<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/unshift.png" alt=""></div>
+        </li>
+        <li id="6">
+          <div class="txt">06、<span>reverse()</span>反转数组<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/reverse.png" alt=""></div>
+        </li>
+        <li id="7">
+          <div class="txt">07、<span>slice(start,end)</span>返回新数组，包含原数组索引start的值到索引end的值，不包含end<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/slice.png" alt=""></div>
+        </li>
+        <li id="8">
+          <div class="txt">08、<span>splice(index,count,value)</span>从索引为index处删除count个元素，插入value<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/splice.png" alt=""></div>
+        </li>
+        <li id="9">
+          <div class="txt">09、<span>sort()</span>对数组元素进行排序<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/sort.png" alt=""></div>
+        </li>
+        <li id="10">
+          <div class="txt">10、<span>toString()</span>将数组中的元素用逗号拼接成字符串<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/toString.png" alt=""></div>
+        </li>
+        <li id="11">
+          <div class="txt">11、<span>、indexOf(value)</span>从索引为0开始，检查数组是否包含value，有则返回匹配到的第一个索引，没有返回-1<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/indexOf.png" alt=""></div>
+        </li>
+        <li id="12">
+          <div class="txt">12、<span>lastIndexOf(value)</span>从最后的索引开始，检查数组是否包含value，有则返回匹配到第一个索引，没有返回-1<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/lastIndexOf.png" alt=""></div>
+        </li>
+        <li id="13">
+          <div class="txt">13、<span>concat(value)</span>将数组和/或值连接成新数组<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/concat.png" alt=""></div>
+        </li>
+        <li id="14">
+          <div class="txt">14、<span>fill(value,start,end)</span>使用给定value填充数组，从索引start开始end结束，不包含end<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/fill.png" alt=""></div>
+        </li>
+        <li id="15">
+          <div class="txt">15、<span>flat()</span>将二维数组变为一维数组<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/flat.png" alt=""></div>
+        </li>
+        <li id="16">
+          <div class="txt">16、<span>flatMap()</span>map和flat的结合<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/flatMap.png" alt=""></div>
+        </li>
+        <li id="17">
+          <div class="txt">17、<span>copyWithin(target,start,end)</span>将数组从start到end索引的元素(不包含end)复制到target开始的索引位置<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/copyWithin.png" alt=""></div>
+        </li>
+        <li id="18">
+          <div class="txt">18、<span>entries()</span>返回一个新的Array迭代器对象，可用for...of遍历<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/entries.png" alt=""></div>
+        </li>
+        <li id="19">
+          <div class="txt">19、<span>keys()</span>返回一个新的Array迭代器对象，可用for...of遍历<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/keys.png" alt=""></div>
+        </li>
+        <li id="20">
+          <div class="txt">20、<span>values()</span>返回一个新的迭代器<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/unshift.png" alt=""></div>
+        </li>
+        <li id="21">
+          <div class="txt">21、<span>forEach()</span>遍历数组<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/forEach.png" alt=""></div>
+        </li>
+        <li id="22">
+          <div class="txt">22、<span>every(fn)</span>判断数组中是否所有元素都满足fn函数中的条件<span>不改变原数组)</span></div>
+          <div class="img"><img src="./images/every.png" alt=""></div>
+        </li>
+        <li id="23">
+          <div class="txt">23、<span>filter(fn)</span>返回数组中满足fn函数中条件的集合<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/filter.png" alt=""></div>
+        </li>
+        <li id="24">
+          <div class="txt">24、<span>find(fn)</span>返回数组中第一个匹配fn函数中条件的值，没有则返回undefined<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/find.png" alt=""></div>
+        </li>
+        <li id="25">
+          <div class="txt">25、<span>findIndex(fn)</span>返回数组中第一个匹配fn函数中条件的索引，没有则返回-1<span>(改变原数组)</span></div>
+          <div class="img"><img src="./images/findIndex.png" alt=""></div>
+        </li>
+        <li id="26">
+          <div class="txt">26、<span>includes()</span>返回一个布尔值，表示某个数组是否包含给定的值<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/includes.png" alt=""></div>
+        </li>
+        <li id="27">
+          <div class="txt">27、<span>map(fn)</span>以fn函数中返回值组成新的数组返回<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/map.png" alt=""></div>
+        </li>
+        <li id="28">
+          <div class="txt">28、<span>reduce()</span>累计器<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/reduce.png" alt=""></div>
+        </li>
+        <li id="29">
+          <div class="txt">29、<span>reduceRight()</span>与reduce功能一样，只是从数组末尾开始累计<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/reduceRight.png" alt=""></div>
+        </li>
+        <li id="30">
+          <div class="txt">30、<span>some(fn)</span>检查数组中是否含有满足fn函数条件的值<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/some.png" alt=""></div>
+        </li>
+        <li id="31">
+          <div class="txt">31、<span>toLocaleString()</span>toLocaleString()将数组中的每个元素使用各自的toLocaleString()转换后用,拼接<span>(不改变原数组)</span></div>
+          <div class="img"><img src="./images/some.png" alt=""></div>
+        </li>
+        <li id="32"></li>
+      </ul>
+    </div>
+    <div class="jump"><a href="https://juejin.im/post/5bb753bd6fb9a05d2272b673?utm_source=gold_browser_extension#heading-11" target="_blank">转载至https://juejin.im/post/5bb753bd6fb9a05d2272b673?utm_source=gold_browser_extension#heading-11</a></div>
   </div>
 </body>
 <script>
-
-  let a = [1,2,3,4,5]
-  let result = a.copyWithin(0,2,5)
-  console.log(result)         // [3,4,5,4,5]
-  console.log(a)      //[3,4,5,4,5] 索引2到5的元素为3,4,5,复制到从0开始的位置替换1和2
-
-
  // https://juejin.im/post/5bb753bd6fb9a05d2272b673?utm_source=gold_browser_extension#heading-11
 </script>  
   
